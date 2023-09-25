@@ -21,4 +21,8 @@ public interface MedicineRepository extends JpaRepository<Medicine, Integer> {
 	@Query(value = "select * from medicines_new where VersionState='InValid'", nativeQuery = true)
 	List<Medicine> findAllInActiveRecords();
 
+	//@Query("SELECT m FROM MedicinePostSyncResultsModel m WHERE m.ndc LIKE %:searchTerm% OR m.name LIKE %:searchTerm%")
+	//Page<MedicinePostSyncResultsModel> getMedicinesVerificationSearch(@Param("searchTerm") String searchTerm, Pageable pageable);
+
+
 }
